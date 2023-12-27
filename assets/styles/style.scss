@@ -826,7 +826,7 @@ header {
 
 .q-field--standout.q-field--highlighted .q-field__control, .q-field--standout .q-field__control {
 	background: #fafafa !important;
-	box-shadow: 2px 1px 10px -5px;
+	// box-shadow: 2px 1px 10px -5px;
 }
 
 [type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
