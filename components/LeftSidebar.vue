@@ -4,12 +4,10 @@
       side="left"
       :bordered="false"
       :mini="mini"
-      @mouseover="mini = false"
-      @mouseout="mini = true"
       :width="250"
   >
     <!-- drawer content -->
-    <div class="px-4 drop-gist">
+    <div class="drop-gist">
       <q-btn dense flat round icon="create" class="btn-gradient">
         {{ mini ? '' : 'Drop a Gist' }}
       </q-btn>
@@ -62,6 +60,18 @@
 </script>
 
 <style lang="scss">
+  .q-drawer--mini {
+    .drop-gist {
+      display: flex;
+      justify-content: center;
+
+      .q-btn {
+        &.btn-gradient {
+          padding: 0;
+        }
+      }
+    }
+  }
   .drop-gist {
     .q-icon {
       border: solid 2px ;

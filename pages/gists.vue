@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <q-page padding class="dash-main home-page mx-auto">
+  <q-page padding class="dash-main home-page ss-container">
     <div class="gist-grid">
       <create-gist />
       <gist

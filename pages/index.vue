@@ -8,7 +8,7 @@ const autoplay = ref(true)
 </script>
 
 <template>
-  <div class="dash-main sitadel-page">
+  <div class="dash-main sitadel-page ss-container">
     <div class="sitadels-banner-builder">
       <div class="sit-banner">
         <q-carousel

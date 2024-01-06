@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <q-toolbar style="height: 125px" inset class="justify-between">
+  <q-toolbar style="height: 125px" class="justify-between">
     <q-btn dense flat round icon="menu" @click="$emit('toggleLeft')" class="lg:hidden" />
     <div class="logo py-6">
       <q-img width="50px" fit="contain" loading="lazy" class="dash-logo" src="/favicon.png" alt="Logo" />
