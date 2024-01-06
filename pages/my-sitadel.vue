@@ -1,83 +1,65 @@
 <script setup lang="ts">
-    import {useStore} from "~/store";
-    import type {Affair} from "~/data/Models";
 
-    const id = useRoute().params.id
-    const { affairs } = useStore()
-    const affair: Affair = computed(()=> {
-      return affairs.find(affair => affair.id === +id )
-    })
 </script>
 
 <template>
-  <div class="dash-main affair-page">
+  <div class="dash-main affair-page my-sitadel">
     <div class="affair-overview">
-      <q-img cover height="220px" width="100%" class="affair-banner" :src="affair?.cover" />
+      <div class="affair-imgs">
+        <q-img cover height="220px" width="100%" class="affair-banner" src="/my-sitadel-cover.png"/>
+        <q-img height="150px" width="150px" src="/my-sitadel-img.png" alt="my sitadel image" class="sitadel-img"/>
+      </div>
       <div class="affair-details mt-4">
-        <h2 class="text-lg font-bold">{{ affair?.title }}</h2>
-        <div class="flex justify-between">
-          <h4 class="text-md text-acc font-bold">#{{ affair?.handle }}</h4>
-          <div class="flex items-center">
-            <span>Media</span>
-              <q-separator class="mx-4 my-auto h-[4px]" inset vertical color="black" size="4px"/>
-            <span>Category</span>
-          </div>
+        <div class="flex flex-col items-end">
+          <h2 class="text-lg">Nasir Kingly Touch Photography</h2>
+          <p class="text-md text-sec font-bold">@NasirKTP</p>
         </div>
-        <div class="">
-          <p>Providing a platform for photography students worldwide -
-            first prize is top Sony digital imaging equipment.</p>
-        </div>
-        <div class="mt-2 flex justify-between items-center">
-          <q-btn dense flat round icon="sym_o_export_notes" class="btn-gradient">
-            Register
+        <div class="mt-6 flex justify-between items-center">
+          <q-btn dense flat round class="btn-gradient">
+            Edit Sitadel
           </q-btn>
-          <div class="grid grid-cols-3 gap-x-4">
-            <q-btn class="text-sec" dense flat round icon="o_preview"/>
-            <q-btn class="text-sec" dense flat round icon="o_notifications_active"/>
+          <div class="grid justify-end">
             <q-btn class="text-sec" dense flat round icon="o_more_vert"/>
           </div>
         </div>
         <div class="flex justify-between flex-nowrap px-4 mt-4 text-center">
           <div class="affair-stat">
-            <h4 class="text-lg font-bold">119</h4>
-            <p>Gists</p>
+            <h4 class="text-lg font-bold">138</h4>
+            <p>Sitizens</p>
           </div>
-              <q-separator class="mx-4 my-auto h-[4px]" inset vertical color="black" size="4px"/>
+          <q-separator class="mx-4 my-auto h-[4px]" inset vertical color="black" size="4px"/>
           <div class="affair-stat">
-            <h4 class="text-lg font-bold">12</h4>
-            <p>Affiliations</p>
+            <h4 class="text-lg font-bold">45</h4>
+            <p>Recognizing</p>
           </div>
-              <q-separator class="mx-4 my-auto h-[4px]" inset vertical color="black" size="4px"/>
+          <q-separator class="mx-4 my-auto h-[4px]" inset vertical color="black" size="4px"/>
           <div class="affair-stat">
-            <h4 class="text-lg font-bold">10</h4>
-            <p>Royals</p>
+            <h4 class="text-lg font-bold">8</h4>
+            <p>Recognitions</p>
           </div>
         </div>
         <q-card class="mt-5 rounded-lg" bordered flat>
           <q-card-section>
-            <h4 class="text-lg flex items-center" v-if="affair?.deadline">
-              <q-btn dense flat round icon="o_event" />
-              <span class="font-bold ml-2 mr-5">Entry Deadline: </span> {{ affair?.deadline }}
+            <h4 class="text-lg no-wrap gap-4 flex items-center">
+              <q-btn class="text-xl" dense flat round icon="o_info"/>
+              We have top-notch equipments to give you the
+              best photography has to offer.
             </h4>
-            <h4 class="text-lg" v-if="affair?.website">
-              <q-btn dense flat round icon="o_link" />
-              <span class="font-bold ml-2 mr-5">Website: </span> <a :href="affair.website" class="text-sec underline">Competition Platform</a>
+            <h4 class="text-lg mt-1 no-wrap gap-4 flex items-center">
+              <q-btn class="text-xl" dense flat round icon="o_phone"/>
+              +2348068829245
             </h4>
-            <h4 class="text-lg" v-if="affair?.date">
-              <q-btn dense flat round icon="o_event_available" />
-              <span class="font-bold ml-2 mr-5">Date: </span> {{ affair?.date }}
+            <h4 class="text-lg mt-1 no-wrap gap-4 flex items-center">
+              <q-btn class="text-xl" dense flat round icon="o_mail"/>
+              nktphotography@gmail.com
             </h4>
-            <h4 class="text-lg" v-if="affair?.address">
-              <q-btn dense flat round icon="o_pin_drop" />
-              <span class="font-bold ml-2 mr-5">Venue: </span> {{ affair?.address }}
+            <h4 class="text-lg mt-1 mb-4 no-wrap gap-4 flex items-center">
+              <q-btn class="text-xl" dense flat round icon="o_home"/>
+              Nasarawa, Nigeria
             </h4>
-            <h4 class="text-lg" v-if="affair?.time">
-              <q-btn dense flat round icon="o_watch" />
-              <span class="font-bold ml-2 mr-5">Time: </span> {{ affair?.time }}
-            </h4>
-            <nuxt-link class="text-lg mt-5 font-bold " :to="`/sitadel/${id}/information`">
-              <span class="ml-2 mr-2">More </span>
-              <q-icon name="o_more_horiz" />
+            <nuxt-link class="text-lg mt-5 font-bold " :to="`/my-sitadel/${id}/information`">
+              <span class="ml-2 mr-2 text-gray-500">More about Nasir Kingly Touch Photography</span>
+              <q-icon name="o_more_horiz"/>
             </nuxt-link>
           </q-card-section>
         </q-card>
@@ -85,31 +67,35 @@
     </div>
     <div class="affair-breakdown">
       <div class="tabs tabs-lifted" data-theme="light">
-        <nuxt-link :exact-active-class="'tab-active'" :to="`/sitadel/${id}`" class="tab">
-          <q-icon name="table_rows" />
+        <nuxt-link :exact-active-class="'tab-active'" :to="`/my-sitadel/`" class="tab">
+          All
         </nuxt-link>
-        <nuxt-link :exact-active-class="'tab-active'" :to="`/sitadel/${id}/media`" role="tab" class="tab">
-          <q-icon name="video_library" />
+        <nuxt-link :exact-active-class="'tab-active'" :to="`/my-sitadel/media`" role="tab" class="tab">
+          Media
         </nuxt-link>
-        <nuxt-link :exact-active-class="'tab-active'" :to="`/sitadel/${id}/royals`" role="tab" class="tab">
-          <q-icon name="fa fa-crown" />
+        <nuxt-link :exact-active-class="'tab-active'" :to="`/my-sitadel/cites`" role="tab" class="tab">
+          Cites
         </nuxt-link>
-        <nuxt-link :exact-active-class="'tab-active'" :to="`/sitadel/${id}/information`" role="tab" class="tab">
-          <q-icon name="fa fa-info-circle" />
+        <nuxt-link :exact-active-class="'tab-active'" :to="`/my-sitadel/hypes`" role="tab" class="tab">
+          Hypes
         </nuxt-link>
-        <nuxt-link :exact-active-class="'tab-active'" :to="`/sitadel/${id}/partners`" role="tab" class="tab">
-          <q-icon name="groups_2" />
+        <nuxt-link :exact-active-class="'tab-active'" :to="`/my-sitadel/recites`" role="tab" class="tab">
+          Recites
+        </nuxt-link>
+        <nuxt-link :exact-active-class="'tab-active'" :to="`/my-sitadel/flows`" role="tab" class="tab">
+          Flows
         </nuxt-link>
       </div>
-      <div :class="{first: $route.name === 'sitadel-id',last: $route.name === 'sitadel-id-partners'}"
+      <div :class="{first: $route.name === 'my-sitadel',last: $route.name === 'my-sitadel-flows'}"
            class="active-tab-content bg-base-100 border-base-300 rounded-box p-6">
-        <NuxtPage />
+        <NuxtPage/>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
+.my-sitadel {
   .active-tab-content {
     grid-column-start: 1;
     grid-column-end: span 9999;
@@ -119,31 +105,38 @@
     border-width: var(--tab-border, 0);
     background: white;
     height: 100%;
+
     &.first {
       border-top-left-radius: 0;
     }
+
     &.last {
       border-top-right-radius: 0;
     }
   }
+
   .tabs-lifted {
     background: transparent !important;
+
     & > .tab {
+      border-color: #e5e6e6;
+      color: #1e4f88;
+      font-size: 1rem;
+      padding-bottom: 10px;
+
       &:first-child {
         border-bottom: solid 0;
       }
-      border-color: #e5e6e6;
-      color: #1e4f88;
-      font-size: 1.3rem;
 
       &.tab-active {
         background: white !important;
-        span,  .q-icon{
+
+        span, .q-icon {
           width: 1.2em;
           height: 1.2em;
           color: #1e4f88;
           @supports (background-clip: text) {
-            background-image: linear-gradient(45deg, #1e4f88, #f24055 );
+            background-image: linear-gradient(45deg, #1e4f88, #f24055);
             background-clip: text;
             color: transparent;
           }
@@ -155,9 +148,24 @@
       }
     }
   }
+
   .affair-overview {
     .affair-banner {
       border-radius: 15px;
     }
+
+    .affair-imgs {
+      position: relative;
+
+      .sitadel-img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+        border: solid 2px #1e4f88;
+        transform: translateY(50%);
+      }
+    }
   }
+}
 </style>

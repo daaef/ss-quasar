@@ -29,7 +29,7 @@
 
 <script lang="ts" setup>
 	const drawer = ref(false);
-	const mini = ref(true);
+	const mini = ref(false);
   const props = defineProps({
     menu: Boolean,
     className: String
@@ -73,6 +73,8 @@
     }
   }
   .drop-gist {
+    padding-left: 14px;
+    padding-bottom: 10px;
     .q-icon {
       border: solid 2px ;
       border-radius: 50%;

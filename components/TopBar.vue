@@ -100,7 +100,7 @@
             <q-separator />
             <q-item-label header>SITADELS</q-item-label>
             <q-separator />
-            <q-item clickable v-close-popup>
+            <q-item clickable v-close-popup to="/my-sitadel">
               <q-item-section avatar>
                 <q-avatar>
                   <q-img src="/monopoly.png" alt="Gist Avatar Image" />
@@ -131,16 +131,6 @@
               </q-item-section>
               <q-item-section>
                 <q-item-label>Log into another look</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item dense clickable v-close-popup>
-              <q-item-section avatar>
-                <q-avatar>
-                  <q-icon name="o_person_add" />
-                </q-avatar>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Create a new look</q-item-label>
               </q-item-section>
             </q-item>
             <q-item dense clickable v-close-popup>
