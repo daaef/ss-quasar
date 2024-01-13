@@ -4,6 +4,9 @@ import {countries, countriesNoStates, affairs} from "~/data";
 // import { Handler } from "~/services/api.handle";
 // import { useSnFetch } from "~/composables/snFetch";
 
+const expiryDate = new Date();
+expiryDate.setDate(expiryDate.getDate() + 3);
+const expiryTime = new Date(expiryDate).getTime()
 // const handler = new Handler();
 export const useStore = defineStore({
     id: "main",
@@ -90,5 +93,11 @@ export const useStore = defineStore({
             })
         }
     },
-    persist: true,
+    persist: {
+        storage: persistedState.cookiesWithOptions({
+            // sameSite: 'strict',
+            maxAge: expiryTime,
+            expires: expiryDate
+        }),
+    },
 });

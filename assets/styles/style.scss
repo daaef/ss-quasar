@@ -550,7 +550,19 @@ form {
 }
 
 .dashboard-wrapper {
+	display: grid;
+	grid-template-columns: 240px 680px 330px;
+	max-width: 1270px;
+	margin: 0 auto;
 	// background: url(/bg.png) !important;
+	.left-sidebar, .main-body {
+		height: 100vh;
+		overflow-y: auto;
+	}
+	.main-body {
+		border-left: solid 1px rgba(114, 114, 114, 0.53);
+		border-right: solid 1px rgba(114, 114, 114, 0.53);
+	}
 	nav {
 		border: none;
 		box-shadow: none !important;
@@ -642,9 +654,9 @@ form {
 	.dash-main {
 		// border-top: solid 1px rgba(0, 0, 0, 0.125);
 		width: 100%;
-		height: calc(100vh - 188px);
+		height: calc(100vh - 168px);
 		overflow-y: auto;
-		padding: 40px 30px;
+		padding: 20px 8px;
 
 		&.sitadel-page {
 			.affair {
@@ -659,7 +671,7 @@ form {
 				.q-title {
 					text-align: center;
 					white-space: normal;
-					font-size: 1rem;
+					font-size: .8rem;
 					font-weight: 700;
 					line-height: 1.2 !important;
 				}
@@ -668,11 +680,11 @@ form {
 					line-height: 1.1 !important;
 					text-align: center;
 					font-weight: 700;
-					font-size: 1rem;
+					font-size: .74rem;
 					color: $secondary;
 					opacity: 1;
 					.sub-small {
-						font-size: .6rem;
+						font-size: .5rem;
 						font-weight: 400;
 					}
 				}

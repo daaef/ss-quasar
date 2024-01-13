@@ -1,18 +1,12 @@
 <template>
-  <q-layout view="hHh lpR fFf" class="dashboard-wrapper">
-
-    <q-header reveal class="bg-transparent text-black">
-      <top-bar @toggle-left="toggleLeftDrawer" @toggle-right="toggleRightDrawer" />
-    </q-header>
-    <left-sidebar :menu="leftDrawerOpen" />
-
-    <right-sidebar :menu="rightDrawerOpen" />
-
-    <q-page-container>
-      <slot />
-    </q-page-container>
-
-  </q-layout>
+  <div class="dashboard-wrapper">
+    <left-sidebar :menu="leftDrawerOpen"/>
+    <div class="main-body">
+      <top-bar @toggle-left="toggleLeftDrawer" @toggle-right="toggleRightDrawer"/>
+      <slot/>
+    </div>
+    <right-sidebar :menu="rightDrawerOpen"/>
+  </div>
 </template>
 
 <script setup>

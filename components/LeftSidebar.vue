@@ -1,16 +1,13 @@
 <template>
-  <q-drawer
-      show-if-above v-model="drawer"
-      side="left"
-      :bordered="false"
-      :mini="mini"
-      :width="250"
-  >
+  <div class="left-sidebar ">
     <!-- drawer content -->
+    <div class="logo py-6">
+      <q-img width="50px" fit="contain" loading="lazy" class="dash-logo" src="/favicon.png" alt="Logo" />
+    </div>
     <div class="drop-gist">
-      <q-btn dense flat round icon="create" class="btn-gradient">
-        {{ mini ? '' : 'Drop a Gist' }}
-      </q-btn>
+      <button class="btn-gradient">
+        <q-icon name="create" /><span>Drop a Gist</span>
+      </button>
     </div>
     <q-list class="side-navigation">
       <q-item v-for="(item, i) in items" :key="i" class="q-my-sm" clickable :to="item?.href" active-class="active">
@@ -24,7 +21,7 @@
 
       </q-item>
     </q-list>
-  </q-drawer>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -60,6 +57,11 @@
 </script>
 
 <style lang="scss">
+.left-sidebar {
+  .logo {
+    padding-left: 14px;
+  }
+}
   .q-drawer--mini {
     .drop-gist {
       display: flex;
@@ -81,9 +83,12 @@
       padding: 3px;
       font-size: .8rem;
     }
-    .q-btn__content {
+    button {
       display: flex;
       gap: 5px;
+      span {
+        font-weight: 500;
+      }
     }
   }
 

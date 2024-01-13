@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <q-page padding class="dash-main home-page ss-container">
+  <div class="dash-main home-page ss-container">
     <div class="gist-grid">
       <create-gist />
       <gist
@@ -29,5 +29,5 @@ votepanel/"
           handle="jamkol23"
       />
     </div>
-  </q-page>
+  </div>
 </template>
