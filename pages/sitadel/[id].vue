@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: "no-right"
+});
     import {useStore} from "~/store";
     import type {Affair} from "~/data/Models";
 
