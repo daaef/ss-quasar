@@ -661,11 +661,13 @@ form {
 		&.sitadel-page {
 			.affair {
 				text-align: center;
-				padding-bottom: 20px;
 				border-radius: 15px;
 				cursor: pointer;
 				&:hover {
 					box-shadow: 0 0 15px rgba(30, 79, 136, 0.31) !important;
+				}
+				span,p {
+					font-size: .8rem;
 				}
 
 				.q-title {

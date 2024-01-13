@@ -2,7 +2,7 @@
       <q-card class="affair" link @click="router?.push(`/sitadel/${affair?.id}`)">
         <q-img
             :src="`/${affair?.image}`"
-            height="200px"
+            height="170px"
             cover=""
         />
         <q-card-section>
