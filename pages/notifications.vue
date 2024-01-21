@@ -1,7 +1,7 @@
 <script setup lang="ts">
-definePageMeta({
+/*definePageMeta({
   layout: "no-right"
-});
+});*/
 </script>
 
 <template>

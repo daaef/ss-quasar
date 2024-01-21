@@ -9,7 +9,7 @@
 
 <template>
   <div class="notification gap-4">
-    <q-avatar color="transparent" size="70px">
+    <q-avatar color="transparent" size="60px">
       <q-img :src="img" alt="Notifications Avatar Image" />
     </q-avatar>
     <div class="">
@@ -23,7 +23,7 @@
 <style lang="scss">
     .notification {
       display: grid;
-      grid-template-columns: 70px auto 34px;
+      grid-template-columns: 60px auto 34px;
       align-items: center;
       gap: 15px;
       padding: 10px 10px;

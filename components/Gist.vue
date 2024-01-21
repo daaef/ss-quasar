@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="gist-content mt-2">
-          <p class="text-lg font-medium">
+          <p class="text-lg">
             {{ content }}
           </p>
         </div>

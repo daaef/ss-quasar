@@ -31,6 +31,10 @@ $title-blue: #28303f;
 	font-family: "Poppins", sans-serif;
 }
 
+body, html {
+	font-size: 12.5px;
+}
+
 .rakkas{
 	font-family: 'Rakkas', serif;
 }
@@ -712,7 +716,7 @@ form {
 				height: calc(100vh - 168px - 55px);
 				.all-notifications {
 					display: grid;
-					grid-gap: 20px;
+					grid-gap: 10px;
 				}
 			}
 		}
