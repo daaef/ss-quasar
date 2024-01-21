@@ -1,12 +1,12 @@
 <template>
-  <div class="left-sidebar ">
+  <div class="left-sidebar" :class="{'q-drawer--mini': mini}">
     <!-- drawer content -->
     <div class="logo py-6">
       <q-img width="50px" fit="contain" loading="lazy" class="dash-logo" src="/favicon.png" alt="Logo" />
     </div>
     <div class="drop-gist">
       <button class="btn-gradient">
-        <q-icon name="create" /><span>Drop a Gist</span>
+        <q-icon name="create" /><span v-if="!mini">Drop a Gist</span>
       </button>
     </div>
     <q-list class="side-navigation">
@@ -15,7 +15,7 @@
           <q-icon :name="item?.icon" text-color="white" />
         </q-item-section>
 
-        <q-item-section>
+        <q-item-section v-if="!mini">
           <q-item-label>{{ item?.text }}</q-item-label>
         </q-item-section>
 
@@ -25,10 +25,11 @@
 </template>
 
 <script lang="ts" setup>
+
 	const drawer = ref(false);
-	const mini = ref(false);
   const props = defineProps({
     menu: Boolean,
+    mini: Boolean,
     className: String
   })
 
@@ -61,11 +62,19 @@
   .logo {
     padding-left: 14px;
   }
+  &.q-drawer--mini {
+    .logo {
+      .dash-logo {
+        width: 35px !important;
+      }
+    }
+  }
 }
   .q-drawer--mini {
     .drop-gist {
       display: flex;
       justify-content: center;
+      padding-left: 0;
 
       .q-btn {
         &.btn-gradient {

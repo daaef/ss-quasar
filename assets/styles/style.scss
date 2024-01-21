@@ -562,6 +562,19 @@ form {
 	&.no-right-sidebar {
 		grid-template-columns: 240px 1010px;
 	}
+	&.mini-nav {
+		grid-template-columns: 65px 1185px;
+	}
+	@media (max-width: 1280px) {
+		max-width: 100%;
+		grid-template-columns: 240px 1fr 330px;
+		&.no-right-sidebar {
+			grid-template-columns: 240px 1fr;
+		}
+		&.mini-nav {
+			grid-template-columns: 65px 1fr;
+		}
+	}
 	.left-sidebar, .main-body {
 		height: 100vh;
 		overflow-y: auto;
