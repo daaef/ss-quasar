@@ -32,7 +32,9 @@ $title-blue: #28303f;
 }
 
 body, html {
-	font-size: 12.5px;
+	font-size: 12px;
+	background: url(/bg.png) no-repeat;
+	background-size: cover;
 }
 
 .rakkas{
@@ -558,7 +560,12 @@ form {
 	grid-template-columns: 240px 680px 330px;
 	max-width: 1270px;
 	margin: 0 auto;
-	// background: url(/bg.png) !important;
+	.q-card {
+		background: transparent;
+	}
+	.q-carousel {
+		background: transparent!important;
+	}
 	&.no-right-sidebar {
 		grid-template-columns: 240px 1010px;
 	}
@@ -674,9 +681,9 @@ form {
 	.dash-main {
 		// border-top: solid 1px rgba(0, 0, 0, 0.125);
 		width: 100%;
-		height: calc(100vh - 128px);
+		height: calc(100vh - 130px);
 		overflow-y: auto;
-		padding: 20px 8px 0;
+		padding: 20px 8px 5px;
 
 		&.sitadel-page {
 			.affair {
@@ -714,7 +721,7 @@ form {
 		}
 		&.affair-page {
 			display: grid;
-			grid-template-columns: .8fr 1.2fr;
+			grid-template-columns: 1fr 1fr;
 			grid-gap: 20px;
 			max-width: 100%;
 			.affair-overview {
@@ -732,13 +739,14 @@ form {
 		}
 		&.notifications-page {
 			.notifications-breakdown {
-				height: calc(100vh - 118px - 55px);
+				height: calc(100vh - 130px - 47px);
 				.all-notifications {
 					display: grid;
 					grid-gap: 10px;
 				}
 			}
 		}
+
 		& > div {
 			.tabs {
 				.tab-active {

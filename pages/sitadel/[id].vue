@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: "no-right"
+  layout: "mini-nav"
 });
     import {useStore} from "~/store";
     import type {Affair} from "~/data/Models";
@@ -120,7 +120,7 @@ definePageMeta({
     margin-top: calc(var(--tab-border) * -1);
     border-color: #e5e6e6;
     border-width: var(--tab-border, 0);
-    background: white;
+    background: transparent;
     height: 100%;
     &.first {
       border-top-left-radius: 0;

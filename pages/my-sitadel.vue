@@ -105,7 +105,7 @@ definePageMeta({
     margin-top: calc(var(--tab-border) * -1);
     border-color: #e5e6e6;
     border-width: var(--tab-border, 0);
-    background: white;
+    background: transparent;
     height: 100%;
 
     &.first {

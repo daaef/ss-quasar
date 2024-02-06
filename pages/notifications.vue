@@ -44,7 +44,7 @@
     margin-top: calc(var(--tab-border) * -1);
     border-color: #e5e6e6;
     border-width: var(--tab-border, 0);
-    background: white;
+    background: transparent;
     height: 100%;
     overflow-y: auto;
 
@@ -61,7 +61,7 @@
     background: transparent !important;
 
     & > .tab {
-      border-color: #e5e6e6;
+      border-color: transparent;
       color: #1e4f88;
       font-size: 1rem;
       padding-bottom: 10px;
@@ -71,7 +71,7 @@
       }
 
       &.tab-active {
-        background: white !important;
+        background: transparent !important;
 
         span, .q-icon {
           width: 1.2em;
