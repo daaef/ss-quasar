@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-import {countries, countriesNoStates, affairs} from "~/data";
+import {countries, countriesNoStates, affairs, messages} from "~/data";
 // import { Handler } from "~/services/api.handle";
 // import { useSnFetch } from "~/composables/snFetch";
 
@@ -59,6 +59,7 @@ export const useStore = defineStore({
         countries: countries,
         countryCodes: countriesNoStates,
         affairs: affairs,
+        messages: messages,
     }),
     actions: {
         /*async callApi(payload) {
