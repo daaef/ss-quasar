@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-import {countries, countriesNoStates, affairs, messages} from "~/data";
+import {countries, countriesNoStates, affairs} from "~/data";
 // import { Handler } from "~/services/api.handle";
 // import { useSnFetch } from "~/composables/snFetch";
 
@@ -59,9 +59,259 @@ export const useStore = defineStore({
         countries: countries,
         countryCodes: countriesNoStates,
         affairs: affairs,
-        messages: messages,
+        allMessages: [
+            {
+                id: "1",
+                img: "/message-1.png",
+                handle: "Juliana James",
+                name: "julicious_me",
+                snippet: "Julia: Will you be able to come for the house",
+                date: "Yesterday",
+                type: "whisper",
+                seen: false,
+                content: [
+                    {
+                        date: "Feb 23",
+                        data: [{
+                            text: "If we agree to hold the dinner after elections we need to give at least one week because people who travelled need to come back first. That’s why I suggested before. You get?",
+                            sent: true,
+                            stamp: "13:23"
+                        },
+                            {
+                                text: "I Understand what you mean. But we need time to get ready.",
+                                sent: false,
+                                stamp: "14:02"
+                            },
+                            {
+                                text: "Tuh, I don’t know. This departmen dinner don turn wahala now. Don’ know if I can make it but we’ll see sha.",
+                                sent: true,
+                                stamp: "13:23"
+                            },
+                            {
+                                text: "Okay. Once I confim the day I’ll let you know how far.",
+                                sent: false,
+                                stamp: "14:37"
+                            }]
+                    },
+                    {
+                        date: "Yesterday",
+                        data: [
+                            {
+                                text: "So they say the dinner is next tomorrow.",
+                                sent: false,
+                                stamp: "09:44"
+                            },
+                            {
+                                text: "WIll you be able to come for the it?",
+                                sent: false,
+                                stamp: "09:45"
+                            }]
+                    }
+                ]
+            },
+            {
+                id: "2",
+                img: "/message-2.png",
+                handle: "Paul Ajeyi",
+                name: "paulo4real",
+                snippet: "Paul: I tell you say na Jagaban go wi...",
+                date: "Feb. 28",
+                seen: false,
+                type: "whisper",
+                content: [
+                    {
+                        date: "Feb 23",
+                        data: [{
+                            text: "If we agree to hold the dinner after elections we need to give at least one week because people who travelled need to come back first. That’s why I suggested before. You get?",
+                            sent: true,
+                            stamp: "13:23"
+                        },
+                            {
+                                text: "I Understand what you mean. But we need time to get ready.",
+                                sent: false,
+                                stamp: "14:02"
+                            },
+                            {
+                                text: "Tuh, I don’t know. This departmen dinner don turn wahala now. Don’ know if I can make it but we’ll see sha.",
+                                sent: true,
+                                stamp: "13:23"
+                            },
+                            {
+                                text: "Okay. Once I confim the day I’ll let you know how far.",
+                                sent: false,
+                                stamp: "14:37"
+                            }]
+                    },
+                    {
+                        date: "Yesterday",
+                        data: [
+                            {
+                                text: "So they say the dinner is next tomorrow.",
+                                sent: false,
+                                stamp: "09:44"
+                            },
+                            {
+                                text: "WIll you be able to come for the it?",
+                                sent: false,
+                                stamp: "09:45"
+                            }]
+                    }
+                ]
+            },
+            {
+                id: "3",
+                img: "/message-3.png",
+                handle: "Veronica Dotun",
+                name: "veechic",
+                snippet: "Veronica: Yeah, I also heard resumpt...",
+                date: "Feb. 28",
+                seen: false,
+                type: "whisper",
+                content: [
+                    {
+                        date: "Feb 23",
+                        data: [{
+                            text: "If we agree to hold the dinner after elections we need to give at least one week because people who travelled need to come back first. That’s why I suggested before. You get?",
+                            sent: true,
+                            stamp: "13:23"
+                        },
+                            {
+                                text: "I Understand what you mean. But we need time to get ready.",
+                                sent: false,
+                                stamp: "14:02"
+                            },
+                            {
+                                text: "Tuh, I don’t know. This departmen dinner don turn wahala now. Don’ know if I can make it but we’ll see sha.",
+                                sent: true,
+                                stamp: "13:23"
+                            },
+                            {
+                                text: "Okay. Once I confim the day I’ll let you know how far.",
+                                sent: false,
+                                stamp: "14:37"
+                            }]
+                    },
+                    {
+                        date: "Yesterday",
+                        data: [
+                            {
+                                text: "So they say the dinner is next tomorrow.",
+                                sent: false,
+                                stamp: "09:44"
+                            },
+                            {
+                                text: "WIll you be able to come for the it?",
+                                sent: false,
+                                stamp: "09:45"
+                            }]
+                    }
+                ]
+            },
+            {
+                id: "4",
+                img: "/message-4.png",
+                handle: "Seyi Sabiyi",
+                name: "seyisabiyi",
+                snippet: "Omoh, I was at the polling unit w...",
+                date: "Feb. 25",
+                seen: true,
+                type: "whisper",
+                content: [
+                    {
+                        date: "Feb 23",
+                        data: [{
+                            text: "If we agree to hold the dinner after elections we need to give at least one week because people who travelled need to come back first. That’s why I suggested before. You get?",
+                            sent: true,
+                            stamp: "13:23"
+                        },
+                            {
+                                text: "I Understand what you mean. But we need time to get ready.",
+                                sent: false,
+                                stamp: "14:02"
+                            },
+                            {
+                                text: "Tuh, I don’t know. This departmen dinner don turn wahala now. Don’ know if I can make it but we’ll see sha.",
+                                sent: true,
+                                stamp: "13:23"
+                            },
+                            {
+                                text: "Okay. Once I confim the day I’ll let you know how far.",
+                                sent: false,
+                                stamp: "14:37"
+                            }]
+                    },
+                    {
+                        date: "Yesterday",
+                        data: [
+                            {
+                                text: "So they say the dinner is next tomorrow.",
+                                sent: false,
+                                stamp: "09:44"
+                            },
+                            {
+                                text: "WIll you be able to come for the it?",
+                                sent: false,
+                                stamp: "09:45"
+                            }]
+                    }
+                ]
+            },
+            {
+                id: "5",
+                img: "/message-5.png",
+                handle: "Susanna Akambi",
+                name: "sassysusy",
+                snippet: "Yeah, I agree. Hope he wins the e...",
+                date: "Feb. 25",
+                seen: true,
+                type: "whisper",
+                content: [
+                    {
+                        date: "Feb 23",
+                        data: [{
+                            text: "If we agree to hold the dinner after elections we need to give at least one week because people who travelled need to come back first. That’s why I suggested before. You get?",
+                            sent: true,
+                            stamp: "13:23"
+                        },
+                            {
+                                text: "I Understand what you mean. But we need time to get ready.",
+                                sent: false,
+                                stamp: "14:02"
+                            },
+                            {
+                                text: "Tuh, I don’t know. This departmen dinner don turn wahala now. Don’ know if I can make it but we’ll see sha.",
+                                sent: true,
+                                stamp: "13:23"
+                            },
+                            {
+                                text: "Okay. Once I confim the day I’ll let you know how far.",
+                                sent: false,
+                                stamp: "14:37"
+                            }]
+                    },
+                    {
+                        date: "Yesterday",
+                        data: [
+                            {
+                                text: "So they say the dinner is next tomorrow.",
+                                sent: false,
+                                stamp: "09:44"
+                            },
+                            {
+                                text: "WIll you be able to come for the it?",
+                                sent: false,
+                                stamp: "09:45"
+                            }]
+                    }
+                ]
+            }
+        ],
+        activeMessage: 'whisper'
     }),
     actions: {
+        setMessages(type: string){
+
+        }
         /*async callApi(payload) {
             await handler
                 .handle(useSnFetch().users[`${payload?.route}`], {
@@ -86,6 +336,11 @@ export const useStore = defineStore({
         tourneys(state){
             return state.affairs.filter(event => {
                 return event?.price
+            })
+        },
+        messages(state){
+            return state.allMessages.filter(message => {
+                return message?.type === state.activeMessage
             })
         },
         eventsAnticipated(state){

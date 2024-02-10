@@ -1,5 +1,8 @@
 <script setup lang="ts">
+    import {useStore} from "~/store";
 
+    const store = useStore()
+    const { activeMessage } = storeToRefs(store)
 </script>
 
 <template>
@@ -17,22 +20,22 @@
       </a>
     </div>
     <div class="base">
-      <a href="#" class="text-gray-400">
+      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'whisper'}"  @click.prevent="activeMessage = 'whisper'">
         WHISPERS
       </a>
     </div>
     <div class="base">
-      <a href="#" class="text-gray-400">
+      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'invite'}" @click.prevent="activeMessage = 'invite'">
         INVITES
       </a>
     </div>
     <div class="base">
-      <a href="#" class="text-gray-400">
+      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'dispatch'}" @click.prevent="activeMessage = 'dispatch'">
         DISPATCHES
       </a>
     </div>
     <div class="base">
-      <a href="#" class="text-gray-400">
+      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'plug'}" @click.prevent="activeMessage = 'plug'">
         PLUGS
       </a>
     </div>
@@ -50,6 +53,10 @@
     &.base {
       a {
         justify-content: center;
+        transition: .3s ease-in-out;
+        &.active {
+          color: #1e4f88;
+        }
       }
       border-top: solid 1px rgba(128, 128, 128, 0.44);
     }

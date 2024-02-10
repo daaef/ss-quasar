@@ -751,11 +751,13 @@ form {
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 10px;
 			& > div {
-				height: 100%;
+				height: calc(100vh - 130px - 25px);
 				width: 100%;
 			}
 			.message-list{
-				margin-top: 20px;
+				padding-top: 20px;
+				height: calc(100vh - 130px - 25px - 107px);
+				overflow-y: auto;
 			}
 			.message-container {
 				border-top-left-radius: 10px;
