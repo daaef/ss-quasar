@@ -2,47 +2,56 @@
     import {useStore} from "~/store";
 
     const store = useStore()
-    const { activeMessage } = storeToRefs(store)
+    const { activeMessage, messageFilter, search } = storeToRefs(store)
+    const startSearch = ()=> {
+      search.value = true
+    }
+    const setType = (type: string)=> {
+      search.value = false
+      messageFilter.value = ''
+      activeMessage.value = type
+    }
 </script>
 
 <template>
   <div class="message-nav">
     <div>
-      <a href="#" class="text-gray-400">
+      <nuxt-link to="/messages/new" class="text-gray-400">
         <q-icon name="edit_note"/>
         NEW MESSAGE
-      </a>
+      </nuxt-link>
     </div>
     <div>
-      <a href="#" class="text-gray-400">
+      <a v-if="!search" href="#" class="text-gray-400" @click.prevent="startSearch">
         <q-icon name="manage_search"/>
         SEARCH MESSAGES
       </a>
+      <q-input autofocus v-else borderless v-model="messageFilter" dense placeholder="Search" />
     </div>
     <div class="base">
-      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'whisper'}"  @click.prevent="activeMessage = 'whisper'">
+      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'whisper'}"  @click.prevent="setType('whisper')">
         WHISPERS
       </a>
     </div>
     <div class="base">
-      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'invite'}" @click.prevent="activeMessage = 'invite'">
+      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'invite'}" @click.prevent="setType('invite')">
         INVITES
       </a>
     </div>
     <div class="base">
-      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'dispatch'}" @click.prevent="activeMessage = 'dispatch'">
+      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'dispatch'}" @click.prevent="setType('dispatch')">
         DISPATCHES
       </a>
     </div>
     <div class="base">
-      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'plug'}" @click.prevent="activeMessage = 'plug'">
+      <a href="#" class="text-gray-400" :class="{active : activeMessage === 'plug'}" @click.prevent="setType('plug')">
         PLUGS
       </a>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .message-nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -50,6 +59,9 @@
 
   & > div {
     border-left: solid 1px rgba(128, 128, 128, 0.44);
+    [type="text"] {
+      background: transparent !important;
+    }
     &.base {
       a {
         justify-content: center;

@@ -306,7 +306,41 @@ export const useStore = defineStore({
                 ]
             }
         ],
-        activeMessage: 'whisper'
+        users: [
+            {
+                id: "1",
+                img: "/message-1.png",
+                handle: "Juliana James",
+                name: "julicious_me",
+            },
+            {
+                id: "2",
+                img: "/message-2.png",
+                handle: "Paul Ajeyi",
+                name: "paulo4real",
+            },
+            {
+                id: "3",
+                img: "/message-3.png",
+                handle: "Veronica Dotun",
+                name: "veechic",
+            },
+            {
+                id: "4",
+                img: "/message-4.png",
+                handle: "Seyi Sabiyi",
+                name: "seyisabiyi",
+            },
+            {
+                id: "5",
+                img: "/message-5.png",
+                handle: "Susanna Akambi",
+                name: "sassysusy",
+            }
+        ],
+        activeMessage: 'whisper',
+        messageFilter: '',
+        search: false,
     }),
     actions: {
         setMessages(type: string){
@@ -340,7 +374,7 @@ export const useStore = defineStore({
         },
         messages(state){
             return state.allMessages.filter(message => {
-                return message?.type === state.activeMessage
+                return state.search ? message?.name.toLowerCase().includes(state.messageFilter.toLowerCase()) || message?.snippet.toLowerCase().includes(state.messageFilter.toLowerCase()) || message?.handle.toLowerCase().includes(state.messageFilter.toLowerCase()) : message?.type.includes(state.activeMessage)
             })
         },
         eventsAnticipated(state){
