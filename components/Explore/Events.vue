@@ -1,9 +1,24 @@
 <script setup lang="ts">
+  import {useStore} from "~/store";
+
   const gender = ref("")
   const sertification = ref("")
   const continent = ref("")
   const country = ref("")
-  const state = ref("")
+  const states = ref([])
+  const state = ref(null)
+  const { countries } = useStore()
+
+  watchEffect(async () => {
+    if (country.value) {
+      const a = countries.find(d_country => {
+        console.log('d_country is', d_country)
+        console.log('country is', country.value)
+        return d_country.name === country.value
+      }) ?? {}
+      states.value = a?.states
+    }
+  })
 </script>
 
 <template>
@@ -22,25 +37,33 @@
             standout
             :options="['Male', 'Female']"
             label="Sertification" />
-        <q-select
+<!--        <q-select
             v-model="gender"
             dense
             standout
             :options="['Male', 'Female']"
-            hint="Location"
-            label="Continents" />
+            label="Continents" />-->
         <q-select
-            v-model="gender"
-            dense
             standout
-            :options="['Male', 'Female']"
-            label="Countries" />
+            v-model="country"
+            dense
+            options-dense
+            :options="countries"
+            option-label="name"
+            emit-value option-value="name"
+            label="Country"
+        />
         <q-select
-            v-model="gender"
-            dense
             standout
-            :options="['Male', 'Female']"
-            label="States" />
+            v-model="state"
+            dense
+            options-dense
+            :options="states"
+            option-label="name"
+            option-value="name"
+            emit-value
+            label="State"
+        />
       </div>
       <div class="people-filters-2">
         <q-select
@@ -62,7 +85,11 @@
             :options="['Male', 'Female']"
             label="SideHustle/Profession" />
       </div>
-      <hr>
+      <q-separator
+          class="my-8"
+          color="#a5a5a5"
+          size="1px"
+      />
     </div>
   </div>
 </template>
