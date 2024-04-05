@@ -27,6 +27,7 @@
     "flowbite": "^2.2.0",
     "next-auth": "4.22.5",
     "quasar": "^2.14.1",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "tailwindcss": "^3.4.3"
   }
 }
