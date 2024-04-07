@@ -140,7 +140,7 @@ definePageMeta({
       font-size: 1.3rem;
 
       &.tab-active {
-        background: white !important;
+        background: transparent !important;
         span,  .q-icon{
           width: 1.2em;
           height: 1.2em;
