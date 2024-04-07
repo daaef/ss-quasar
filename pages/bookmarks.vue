@@ -5,13 +5,13 @@
   <div class="dash-main bookmark-page">
     <ul class="bookmarks-tabs">
       <li>
-        <nuxt-link to="/bookmarks" exact-active-class="tab-active">Gists</nuxt-link>
+        <nuxt-link to="/bookmarks" exact-active-class="text-acc font-bold">Gists</nuxt-link>
       </li>
       <li>
         <q-separator vertical size="1px" class="h-[20px]"/>
       </li>
       <li>
-        <nuxt-link to="/bookmarks/bookmark-affairs" exact-active-class="tab-active">Affairs</nuxt-link>
+        <nuxt-link to="/bookmarks/bookmark-affairs" exact-active-class="text-acc font-bold">Affairs</nuxt-link>
       </li>
     </ul>
     <div class="bookmarks-container">
@@ -29,10 +29,6 @@
 
   a {
     font-size: 1.2rem;
-
-    &.tab-active {
-      font-weight: bold;
-    }
   }
 }
 </style>
