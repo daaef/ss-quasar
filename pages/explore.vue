@@ -220,6 +220,17 @@ votepanel/"
             <q-btn flat dense class="text-sec rounded-2xl px-5">SEE ALL</q-btn>
           </div>
         </div>
+        <div class="flex w-full mt-5 items-center justify-between">
+          <div class="flex items-center">
+            <q-avatar color="transparent" size="84">
+              <q-img src="/sertified.png" alt="avatar Image"/>
+            </q-avatar>
+            <div class="ml-3">
+              <div class="font-medium"><span class="text-acc">@katieWilson </span> is now a sertified red royal</div>
+            </div>
+          </div>
+          <q-btn class="text-sec" dense flat round icon="o_more_vert"/>
+        </div>
       </div>
     </div>
   </div>

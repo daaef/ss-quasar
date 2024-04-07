@@ -30,12 +30,6 @@
             dense
             standout
             :options="['Male', 'Female']"
-            label="Gender" />
-        <q-select
-            v-model="gender"
-            dense
-            standout
-            :options="['Male', 'Female']"
             label="Sertification" />
 <!--        <q-select
             v-model="gender"
@@ -64,26 +58,38 @@
             emit-value
             label="State"
         />
+        <q-select
+            v-model="gender"
+            dense
+            standout
+            :options="['Male', 'Female']"
+            label="Delivery Service" />
       </div>
-      <div class="people-filters-2">
+      <div class="people-filters">
         <q-select
             v-model="gender"
             dense
             standout
             :options="['Male', 'Female']"
-            label="School" />
+            label="Category" />
         <q-select
             v-model="gender"
             dense
             standout
             :options="['Male', 'Female']"
-            label="Interests/Hobbies" />
+            label="Niche" />
         <q-select
             v-model="gender"
             dense
             standout
             :options="['Male', 'Female']"
-            label="SideHustle/Profession" />
+            label="Brand" />
+        <q-select
+            v-model="gender"
+            dense
+            standout
+            :options="['Male', 'Female']"
+            label="Condition" />
       </div>
       <q-separator
           class="my-8"

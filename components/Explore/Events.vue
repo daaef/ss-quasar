@@ -1,48 +1,51 @@
 <script setup lang="ts">
-  import {useStore} from "~/store";
+import {useStore} from "~/store";
+import { ref } from 'vue';
 
-  const gender = ref("")
-  const sertification = ref("")
-  const continent = ref("")
-  const country = ref("")
-  const states = ref([])
-  const state = ref(null)
-  const { countries } = useStore()
+const fromDate = ref(null);
+const toDate = ref(null);
+const fromShow = ref(true);
+const toShow = ref(true);
 
-  watchEffect(async () => {
-    if (country.value) {
-      const a = countries.find(d_country => {
-        console.log('d_country is', d_country)
-        console.log('country is', country.value)
-        return d_country.name === country.value
-      }) ?? {}
-      states.value = a?.states
-    }
-  })
+const openPopup = () => {
+  fromShow.value = true;
+};
+const gender = ref("")
+const country = ref("")
+const states = ref([])
+const state = ref(null)
+const { countries } = useStore()
+
+
+watchEffect(async () => {
+  if (country.value) {
+    const a = countries.find(d_country => {
+      console.log('d_country is', d_country)
+      console.log('country is', country.value)
+      return d_country.name === country.value
+    }) ?? {}
+    states.value = a?.states
+  }
+})
+
 </script>
 
 <template>
   <div class="">
     <div class="ss-search-filters">
-      <div class="people-filters">
-        <q-select
-            v-model="gender"
-            dense
-            standout
-            :options="['Male', 'Female']"
-            label="Gender" />
+      <div class="tourney-filters">
         <q-select
             v-model="gender"
             dense
             standout
             :options="['Male', 'Female']"
             label="Sertification" />
-<!--        <q-select
-            v-model="gender"
-            dense
-            standout
-            :options="['Male', 'Female']"
-            label="Continents" />-->
+        <!--        <q-select
+                    v-model="gender"
+                    dense
+                    standout
+                    :options="['Male', 'Female']"
+                    label="Continents" />-->
         <q-select
             standout
             v-model="country"
@@ -71,19 +74,64 @@
             dense
             standout
             :options="['Male', 'Female']"
-            label="School" />
+            label="Entry/Ticket Fee Status" />
         <q-select
             v-model="gender"
             dense
             standout
             :options="['Male', 'Female']"
-            label="Interests/Hobbies" />
+            label="Category" />
         <q-select
             v-model="gender"
             dense
             standout
             :options="['Male', 'Female']"
-            label="SideHustle/Profession" />
+            label="Niche" />
+        <div>
+          <q-input
+              v-model="fromDate"
+              standout
+              dense
+              :rules="['required']"
+              label="Starts from"
+          >
+            <q-popup-proxy :trap-focus="false">
+              <q-date
+                  v-model="fromDate"
+                  today-btn
+                  type="date"
+                  flat
+                  minimal
+                  mask="DD-MM-YYYY"
+                  @close="fromShow = false"
+              >
+                <q-btn v-close-popup label="Close" color="primary" flat />
+              </q-date>
+            </q-popup-proxy>
+          </q-input>
+        </div>
+        <div>
+          <q-input
+              v-model="toDate"
+              standout
+              dense
+              :rules="['required']"
+              label="Ends on"
+          >
+            <q-popup-proxy :trap-focus="false">
+              <q-date
+                  today-btn
+                  mask="DD-MM-YYYY"
+                  v-model="toDate"
+                  type="date"
+                  flat
+                  minimal
+              >
+                <q-btn v-close-popup label="Close" color="primary" flat />
+              </q-date>
+            </q-popup-proxy>
+          </q-input>
+        </div>
       </div>
       <q-separator
           class="my-8"
